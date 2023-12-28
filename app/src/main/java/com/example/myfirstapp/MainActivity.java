@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.anixastoast.AnixasCustomToast;
+import com.example.android_first_lib.HelloWorld;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AnixasCustomToast.CustomToast(this,"Anixa's Custom Toast");
+        HelloWorld.MyToast(this,"Hello World");
+
     }
 }
