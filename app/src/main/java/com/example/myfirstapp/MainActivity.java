@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.anixastoast.AnixasCustomToast;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -11,8 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Hello Git
-        //Welcome TO Github
-        //Hello Anixa Here...
+        AnixasCustomToast.CustomToast(this,"Anixa's Custom Toast");
     }
 }
