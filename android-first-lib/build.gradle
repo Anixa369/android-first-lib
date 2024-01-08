@@ -7,11 +7,10 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.android.tools.build:gradle:8.1.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
 
 plugins {
     id 'com.android.library'
@@ -27,14 +26,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        consumerProguardFiles 'proguard-rules.pro'
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            consumerProguardFiles 'proguard-rules.pro'
-            consumerProguardFiles 'consumer-rules.pro'       // << --- ADD This
         }
     }
     compileOptions {
@@ -42,18 +40,18 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)        // << --- ADD This
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17            // << --- ADD This
+    sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
-
 
 dependencies {
 
@@ -71,11 +69,11 @@ publishing {
             artifactId = 'android-first-lib'
             version = "1.0"
             pom {
-                description = 'First Git Repo'
+                description = 'First Android Project'
             }
         }
     }
-    repositories {               // << --- ADD This
+    repositories {
         mavenLocal()
     }
 }
